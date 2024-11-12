@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Glitch from './components/Home'
+import GlitchHomepage from './components/Home'
 import NavBar from './components/NavBar'
 import BranchingTimeline from './components/Timeline'
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-<Glitch><BranchingTimeline/><NavBar/></Glitch>  
+    <GlitchHomepage/>
     </>
   )
 }
