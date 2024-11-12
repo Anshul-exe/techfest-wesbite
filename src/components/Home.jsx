@@ -5,6 +5,9 @@ import SpiderWeb from '/src/assets/spider-web-svgrepo-com.svg';
 
 const GlitchLetter = ({ children }) => {
   return (
+
+    <div className="relative text-white min-h-screen flex flex-col items-center px-6 py-4 font-[Poppins] max-w-[1280px] m-auto">
+
     <motion.span
       className="relative inline-block text-transparent"
       style={{ WebkitTextStroke: '2px white' }}
@@ -13,6 +16,7 @@ const GlitchLetter = ({ children }) => {
       }}
       transition={{ duration: 0.3 }}
     >
+
       {children}
     </motion.span>
   );
