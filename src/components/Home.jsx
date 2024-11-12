@@ -15,6 +15,7 @@ const GlitchLetter = ({ children }) => {
     >
       {children}
     </motion.span>
+    </div>
   );
 };
 
