@@ -4,7 +4,7 @@ import spiderWeb from '/src/assets/spider-web-svgrepo-com.svg';
 
 const Glitch = ({ children }) => {
   return (
-    <div className="relative bg-gray-900 text-white min-h-screen flex flex-col items-center px-6 py-4 font-[Poppins]">
+    <div className="relative text-white min-h-screen flex flex-col items-center px-6 py-4 font-[Poppins] max-w-[1280px] m-auto">
 
       {children}
 

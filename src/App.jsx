@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-<Glitch><NavBar/></Glitch>  
+      <Glitch><NavBar/></Glitch>  
     </>
   )
 }
