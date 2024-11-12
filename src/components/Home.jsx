@@ -48,7 +48,7 @@ const GlitchHomepage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="w-full h-full transform -translate-x-1/2">
+          <div className="w-full h-full transform -translate-x-1/2 pad">
             <img src={SpiderWeb} className="w-full h-full" alt="Spider Web" />
           </div>
         </motion.div>
@@ -59,7 +59,7 @@ const GlitchHomepage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="w-full h-full transform translate-x-1/2 scale-x-[-1]">
+          <div className="w-full h-full transform translate-x-1/2 px-8 scale-x-[-1]">
             <img src={SpiderWeb} className="w-full h-full" alt="Spider Web" />
           </div>
         </motion.div>
@@ -75,6 +75,7 @@ const GlitchHomepage = () => {
             {'GLITCH'.split('').map((letter, index) => (
               <GlitchLetter key={index}>{letter}</GlitchLetter>
             ))}
+            
           </motion.h1>
 
 
