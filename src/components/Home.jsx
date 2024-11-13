@@ -1,32 +1,48 @@
 import React from 'react';
-import { Search, ChevronDown, ChevronRight } from 'lucide-react';
+import { Search, ChevronDown, ChevronRight, BrainCircuitIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
-import SpiderWeb from '/src/assets/spider-web-svgrepo-com.svg';
-
+import SpiderWeb from '/src/assets/spider-web.svg';
+import BranchingTimeline from './Timeline';
 const GlitchLetter = ({ children }) => {
   return (
     <motion.span
       className="relative inline-block text-transparent"
       style={{ WebkitTextStroke: '2px white' }}
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ type: 'spring', duration: 0.5, bounce: 0.5 }}
       whileHover={{
         scale: 1.05,
+        color:"#FFFFFF",
       }}
-      transition={{ duration: 0.3 }}
     >
       {children}
     </motion.span>
-    </div>
   );
 };
 
 const GlitchHomepage = () => {
   return (
+    <>
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
+      {/* Circle with Red Blur */}
+      <motion.div 
+        className="absolute inset-0 flex items-center justify-center"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: 'spring', duration: 1, bounce: 0.5 }}
+      >
+        <div 
+          className="w-80 h-80 bg-[#E50000] rounded-full blur-3xl opacity-100"
+        />
+      </motion.div>
 
+      {/* Navigation */}
       <motion.nav 
         className="absolute top-0 left-0 right-0 z-10 px-8 py-6"
-        initial={{ y: -20, opacity: 0 }}
+        initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
       >
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="text-2xl font-bold">Glitch</div>
@@ -40,46 +56,46 @@ const GlitchHomepage = () => {
         </div>
       </motion.nav>
 
-
+      {/* Main Content */}
       <div className="relative min-h-screen flex items-center justify-center">
-
+        {/* Spider Webs */}
         <motion.div 
-          className="absolute left-0 top-0 w-1/2 h-full overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="absolute left-[1200px] top-0 right- w-max h-full overflow-hidden"
+          initial={{ x: '-100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="w-full h-full transform -translate-x-1/2 pad">
-            <img src={SpiderWeb} className="w-full h-full" alt="Spider Web" />
+          <div className="w-full h-full">
+            <img src={SpiderWeb} className="w-full h-full right-100" alt="Spider Web" />
           </div>
         </motion.div>
 
         <motion.div 
-          className="absolute right-0 top-0 w-1/2 h-full overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="absolute right-[1250px] top-[100px] w-max h-full overflow-hidden"
+          initial={{ x: '100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="w-full h-full transform translate-x-1/2 px-8 scale-x-[-1]">
+          <div className="w-full h-full transform scale-x-[-1]">
             <img src={SpiderWeb} className="w-full h-full" alt="Spider Web" />
           </div>
         </motion.div>
 
-
+        {/* Content Container */}
         <div className="relative z-10 flex flex-col items-center">
-
+          {/* Main Title */}
           <motion.h1 
-            className="text-[160px] font-bold leading-none mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="text-[300px] font-bold leading-none mb-4"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: 'spring', duration: 1, bounce: 0.5 }}
           >
             {'GLITCH'.split('').map((letter, index) => (
               <GlitchLetter key={index}>{letter}</GlitchLetter>
             ))}
-            
           </motion.h1>
 
-
+          {/* Subtitle */}
           <motion.h2 
             className="text-2xl tracking-[0.5em] mb-24"
             initial={{ opacity: 0 }}
@@ -90,10 +106,10 @@ const GlitchHomepage = () => {
           </motion.h2>
         </div>
 
-
+        {/* Bottom Content */}
         <div className="absolute bottom-0 left-0 right-0 px-8 pb-8">
           <div className="relative">
-
+            {/* Description */}
             <motion.div 
               className="absolute left-8 bottom-16 max-w-sm"
               initial={{ opacity: 0, x: -20 }}
@@ -106,7 +122,7 @@ const GlitchHomepage = () => {
               </p>
             </motion.div>
 
-
+            {/* Timeline Button */}
             <motion.button 
               className="absolute right-24 bottom-16 bg-white text-black px-6 py-2 rounded-full"
               whileHover={{ scale: 1.05 }}
@@ -117,7 +133,7 @@ const GlitchHomepage = () => {
               GO SEE TIMELINE
             </motion.button>
 
-
+            {/* Navigation Dots */}
             <motion.div 
               className="absolute right-8 bottom-0 flex space-x-4"
               initial={{ opacity: 0 }}
@@ -142,6 +158,8 @@ const GlitchHomepage = () => {
         </div>
       </div>
     </div>
+
+    </>
   );
 };
 
