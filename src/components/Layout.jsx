@@ -13,6 +13,7 @@ import GlitchHomepage from "./Home";
 import AboutSection from "./Aboutus";
 import BranchingTimeline from "./Timeline";
 import HoverCards from "./Card";
+import FootFallCounter from "./FootFall";
 
 const Navbar = () => {
   const location = useLocation();
@@ -78,6 +79,7 @@ const Layout = () => {
           <Route path="/about" element={<AboutSection />} />
           <Route path="/timeline" element={<BranchingTimeline />} />
           <Route path="/sponsors" element={<HoverCards />} />
+          <Route path="/foot" element={<FootFallCounter />} />
         </Routes>
       </div>
     </BrowserRouter>
