@@ -13,7 +13,7 @@ import GlitchHomepage from "./Home";
 import AboutSection from "./Aboutus";
 import BranchingTimeline from "./Timeline";
 import HoverCards from "./Card";
-import FootFallCounter from "./FootFall";
+import FootFallCounter from "./NumberDaudao";
 
 const Navbar = () => {
   const location = useLocation();
