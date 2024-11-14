@@ -30,7 +30,7 @@ const BranchingTimeline = ({ events = [
   };
 
   return (
-    <div className="w-full bg-gray-900 p-8 rounded-lg overflow-x-auto">
+    <div className="w-full bg-[#160C0C] p-8 rounded-lg overflow-x-auto">
       <div className="relative" style={{ width: totalWidth, height: totalHeight }}>
         {/* SVG container for paths */}
         <svg 
