@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import EyeOfAgamotto from './EyeOfAgamotto';
 
 const AboutSection = () => {
   useEffect(() => {
@@ -23,16 +24,7 @@ const AboutSection = () => {
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6 mt-8">
-          <img
-            className="w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
-            alt="office content 1"
-          />
-          <img
-            className="mt-6 w-full lg:mt-12 rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
-            alt="office content 2"
-          />
+          {/* <EyeOfAgamotto/> */}
         </div>
       </div>
     </section>
