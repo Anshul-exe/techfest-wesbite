@@ -97,7 +97,7 @@ const GlitchHomepage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            NOW WAY HOME
+            NO WAY HOME
           </motion.h2>
         </div>
 
