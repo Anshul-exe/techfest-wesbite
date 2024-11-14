@@ -6,7 +6,9 @@ const BranchingTimeline = ({
     { id: 2, title: "Nexus Event", date: "Variant detected", branch: 1 },
     { id: 3, title: "Branch Created", date: "Timeline split", branch: -1 },
     { id: 4, title: "Timeline Reset", date: "TVA Intervention", branch: 1 },
-    { id: 5, title: "Main Timeline", date: "Restored", branch: 0 }
+    { id: 5, title: "Timeline Reset", date: "TVA Intervention", branch: -1 },
+    { id: 6, title: "Timeline Reset", date: "TVA Intervention", branch: 1 },
+    { id: 7, title: "Main Timeline", date: "Restored", branch: 0 }
   ]
 }) => {
   const [hoveredEvent, setHoveredEvent] = useState(null);
@@ -35,7 +37,7 @@ const BranchingTimeline = ({
   };
 
   return (
-    <div className="w-full p-8 rounded-lg overflow-x-auto" style={{ border: '1px solid #f8861e', background: '#160C0C' }}>
+    <div className="w-full p-8 rounded-lg overflow-x-auto">
       <div className="relative" style={{ width: totalWidth, height: totalHeight }}>
         <svg
           width={totalWidth}
@@ -63,7 +65,7 @@ const BranchingTimeline = ({
             </filter>
           </defs>
 
-          {/* Enhanced main timeline with stronger glow */}
+          {/* Main timeline line with glow */}
           <g>
             {/* Outermost glow layer */}
             <line
@@ -72,7 +74,7 @@ const BranchingTimeline = ({
               x2={totalWidth - 50}
               y2={centerY}
               stroke="#f8861e"
-              strokeWidth="8"
+              strokeWidth="10"
               strokeOpacity="0.3"
               filter="url(#strongGlow)"
             />
@@ -85,7 +87,7 @@ const BranchingTimeline = ({
               y2={centerY}
               stroke="#f8861e"
               strokeWidth="6"
-              strokeOpacity="0.6"
+              strokeOpacity="0.5"
               filter="url(#neonGlow)"
             />
 
@@ -96,7 +98,7 @@ const BranchingTimeline = ({
               x2={totalWidth - 50}
               y2={centerY}
               stroke="#f8861e"
-              strokeWidth="2"
+              strokeWidth="4"
               className="transition-all duration-300"
             />
           </g>
