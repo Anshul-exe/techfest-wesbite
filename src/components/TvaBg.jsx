@@ -6,6 +6,7 @@ import Icon1 from '../assets/icon1.png';
 import Icon2 from '../assets/icon2.png'; 
 import Icon3 from '../assets/icon3_.png'; 
 import Icon4 from '../assets/icon4.png';
+import BranchingTimeline from './Timeline';
 const TVABackground = ({ children }) => {
   return (
     <div
@@ -54,7 +55,7 @@ const TVABackground = ({ children }) => {
       </div>
 
       {/* Content Area */}
-      <div className="relative w-full h-full p-8">{children}</div>
+      <div className="relative w-full h-full p-8"><BranchingTimeline/></div>
     </div>
   );
 };

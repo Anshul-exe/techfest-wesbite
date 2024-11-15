@@ -5,7 +5,10 @@ import Layout from "./components/Layout";
 function App() {
   const [count, setCount] = useState(0);
 
-  return <Layout />;
+  return (
+    <>
+  <Layout /></>
+);
 }
 
 export default App;
