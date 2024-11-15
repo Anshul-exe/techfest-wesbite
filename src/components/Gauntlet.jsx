@@ -40,8 +40,8 @@ const InfinityGauntlet = styled.div`
 
   // Add necessary background gradients here
   background:
-  /** hand **/
-  /* stones */
+  // * hand *
+   // stones
     radial-gradient(
       0.4em 0.4em at 6em 9em,
       var(--white) 49%,
@@ -136,8 +136,8 @@ const InfinityGauntlet = styled.div`
         var(--blackT) 0.9em
       )
       7.7em 17em / 0.8em 0.8em,
-    /* upper-left wing outside yellow stone base */
-      linear-gradient(-45deg, var(--dgold) 50%, var(--dgoldT) 50%) 6.6em 13.4em /
+    // upper-left wing outside yellow stone base
+    linear-gradient(-45deg, var(--dgold) 50%, var(--dgoldT) 50%) 6.6em 13.4em /
       1em 1em,
     radial-gradient(125% 200% at 100% 0%, var(--dgold) 49%, var(--dgoldT) 50%)
       6.65em 12.3em / 1.5em 0.1em,
@@ -155,8 +155,8 @@ const InfinityGauntlet = styled.div`
       6.5em 11.5em / 1.1em 2.6em,
     radial-gradient(200% 130% at 100% 40%, var(--black) 49%, var(--blackT) 50%)
       6.2em 11.5em / 1.1em 2.6em,
-    /* lower-right wing of yellow stone base */
-      linear-gradient(-45deg, var(--dgoldT) 50%, var(--dgold) 50%) 11.3em 17em /
+    // lower-right wing of yellow stone base
+    linear-gradient(-45deg, var(--dgoldT) 50%, var(--dgold) 50%) 11.3em 17em /
       0.6em 0.6em,
     linear-gradient(var(--black), var(--black)) 12.5em 14.3em / 1.4em 0.4em,
     linear-gradient(var(--black), var(--black)) 12.7em 15em / 0.9em 0.2em,
@@ -178,8 +178,8 @@ const InfinityGauntlet = styled.div`
         var(--blackT) 0.9em
       )
       11.5em 17em / 0.8em 0.8em,
-    /* upper-right wing outside yellow stone base */
-      linear-gradient(45deg, var(--dgold) 50%, var(--dgoldT) 50%) 12.35em 13.4em /
+    // upper-right wing outside yellow stone base
+    linear-gradient(45deg, var(--dgold) 50%, var(--dgoldT) 50%) 12.35em 13.4em /
       1em 1em,
     radial-gradient(125% 200% at 0% 0%, var(--dgold) 49%, var(--dgoldT) 50%)
       11.8em 12.3em / 1.5em 0.1em,
@@ -197,8 +197,8 @@ const InfinityGauntlet = styled.div`
       12.3em 11.5em / 1.1em 2.6em,
     radial-gradient(200% 130% at 0% 40%, var(--black) 49%, var(--blackT) 50%)
       12.6em 11.5em / 1.1em 2.6em,
-    /* yellow stone base */
-      linear-gradient(
+    // yellow stone base
+    linear-gradient(
         5deg,
         var(--dgoldT) 0.45em,
         var(--dgold) 0.5em,
@@ -307,8 +307,8 @@ const InfinityGauntlet = styled.div`
       var(--black) 49.5%,
       var(--blackT) 50%
     ),
-    /* holes */
-      radial-gradient(
+    // holes
+    radial-gradient(
         0.4em 0.4em at 7.4em 8.2em,
         var(--black) 49%,
         var(--blackT) 50%
@@ -333,8 +333,8 @@ const InfinityGauntlet = styled.div`
       var(--black) 49%,
       var(--blackT) 50%
     ),
-    /* trapezoid with vents */ linear-gradient(var(--black), var(--black)) 9em
-      17.8em / 0.4em 0.7em,
+    // trapezoid with vents
+    linear-gradient(var(--black), var(--black)) 9em 17.8em / 0.4em 0.7em,
     linear-gradient(var(--black), var(--black)) 10.5em 17.8em / 0.4em 0.7em,
     linear-gradient(var(--black), var(--black)) 8.5em 18.5em / 3em 0.6em,
     linear-gradient(var(--black), var(--black)) 9em 19.8em / 0.4em 1em,
@@ -361,8 +361,8 @@ const InfinityGauntlet = styled.div`
         var(--dgold) 1.2em
       )
       9.9em 18.5em / 2.5em 2.25em,
-    /* palm */
-      radial-gradient(100% 200% at 50% 0%, var(--black) 49%, var(--blackT) 50%)
+    // palm
+    radial-gradient(100% 200% at 50% 0%, var(--black) 49%, var(--blackT) 50%)
       9.5em 7.1em / 1em 0.5em,
     radial-gradient(100% 200% at 50% 0%, var(--black) 49%, var(--blackT) 50%)
       12.5em 7.1em / 1em 0.5em,
@@ -403,8 +403,8 @@ const InfinityGauntlet = styled.div`
       3.6em 17.8em / 12.9em 4.8em,
     radial-gradient(150% 100% at 50% 0, var(--black) 49%, var(--blackT) 50%) 4em
       17.5em / 12.1em 6.8em,
-    /** fingers **/ /* pinky */
-      radial-gradient(
+    // fingers / pinky
+    radial-gradient(
         0.5em 0.5em at 5.6em 4em,
         var(--black) 49%,
         var(--blackT) 50%
@@ -437,8 +437,8 @@ const InfinityGauntlet = styled.div`
         var(--black) 2.2em
       )
       4.2em 1.5em / 2.8em 6.5em,
-    /* ring */
-      radial-gradient(
+    // ring
+    radial-gradient(
         0.5em 0.5em at 8.5em 2.6em,
         var(--black) 49%,
         var(--blackT) 50%
@@ -484,8 +484,8 @@ const InfinityGauntlet = styled.div`
         var(--black) 2.2em
       )
       7.1em 0.5em / 2.8em 7.5em,
-    /* middle */
-      radial-gradient(
+    // middle
+    radial-gradient(
         0.5em 0.5em at 11.4em 2.4em,
         var(--black) 49%,
         var(--blackT) 50%
@@ -532,8 +532,8 @@ const InfinityGauntlet = styled.div`
         var(--black) 2.2em
       )
       10em 0 / 2.8em 8em,
-    /* index */
-      radial-gradient(
+    // index
+    radial-gradient(
         0.5em 0.5em at 14.4em 3.5em,
         var(--black) 49%,
         var(--blackT) 50%
@@ -767,6 +767,406 @@ const InfinityGauntlet = styled.div`
       var(--blackT) 50%
     ),
     // trying ke upar vala
+    repeating-linear-gradient(
+        164deg,
+        var(--blackT),
+        var(--blackT) 0.28em,
+        var(--black) 0.3em,
+        var(--black) 0.86em
+      )
+      10.6em 25em / 1em 8.1em,
+    radial-gradient(
+      0.6em 0.6em at 10.5em 25.6em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 10.5em 26.5em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 10.5em 27.4em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 10.5em 28.3em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 10.5em 29.2em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 10.5em 30.1em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 10.5em 31em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 10.5em 31.9em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 10.5em 32.8em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 11.5em 25.3em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 11.5em 26.2em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 11.5em 27.1em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 11.5em 28em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 11.5em 28.9em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 11.5em 29.8em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 11.5em 30.7em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 11.5em 31.6em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 11.5em 32.5em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    linear-gradient(
+        90deg,
+        var(--black) 0.6em,
+        var(--blackT) 0.6em,
+        var(--blackT) 1em,
+        var(--black) 1em
+      )
+      9.2em 32.9em / 1.6em 1.1em,
+    radial-gradient(
+      0.6em 0.6em at 9.5em 34em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 10.5em 34em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.7em 0.7em at 7.5em 25.2em,
+      var(--dgold) 49%,
+      var(--dgoldT) 50%
+    ),
+    radial-gradient(
+      0.7em 0.7em at 12.5em 25.2em,
+      var(--dgold) 49%,
+      var(--dgoldT) 50%
+    ),
+    radial-gradient(
+        100% 310% at 50% 85%,
+        var(--dgoldT) 2.85em,
+        var(--dgold) 2.9em,
+        var(--dgold) 3em,
+        var(--dgold) 3em,
+        var(--dgold) 3.45em,
+        var(--dgoldT) 3.5em
+      )
+      6.5em 25.25em / 7em 7.25em,
+    radial-gradient(
+      0.6em 0.6em at 6.85em 32.5em,
+      var(--dgold) 49%,
+      var(--dgoldT) 50%
+    ),
+    radial-gradient(
+      0.6em 0.6em at 13.15em 32.5em,
+      var(--dgold) 49%,
+      var(--dgoldT) 50%
+    ),
+    radial-gradient(
+      0.4em 0.4em at 7.6em 22.5em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.4em 0.4em at 12.4em 22.5em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.4em 0.4em at 6.2em 33.8em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.4em 0.4em at 13.8em 33.8em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(100% 200% at 50% 0%, var(--mgold) 49%, var(--mgoldT) 50%)
+      6.8em 34em / 6.3em 0.7em,
+    radial-gradient(100% 200% at 50% 0%, var(--black) 49%, var(--blackT) 50%)
+      6.6em 34em / 6.7em 1em,
+    radial-gradient(100% 200% at 50% 0, var(--gold) 49.5%, var(--goldT) 50%)
+      7.1em 20.9em / 5.8em 0.7em,
+    radial-gradient(210% 100% at 50% 0, var(--black) 3.9em, var(--mgold) 3.95em)
+      7.4em 20.9em / 5.2em 4.1em,
+    linear-gradient(
+        120deg,
+        var(--blackT) 1.2em,
+        var(--black) 1.25em,
+        var(--black) 1.95em,
+        var(--mgold) 2em
+      )
+      5.8em 20.9em / 1.7em 2.5em,
+    linear-gradient(
+        -120deg,
+        var(--blackT) 1.2em,
+        var(--black) 1.25em,
+        var(--black) 1.95em,
+        var(--mgold) 2em
+      )
+      12.5em 20.9em / 1.7em 2.5em,
+    linear-gradient(
+        45deg,
+        var(--blackT) 0.7em,
+        var(--black) 0.75em,
+        var(--black) 1.34em,
+        var(--mgold) 1.35em
+      )
+      5.4em 23.4em / 4.6em 0.7em,
+    linear-gradient(
+        -45deg,
+        var(--blackT) 0.7em,
+        var(--black) 0.75em,
+        var(--black) 1.34em,
+        var(--mgold) 1.35em
+      )
+      10em 23.4em / 4.6em 0.7em,
+    radial-gradient(
+        100% 290% at 50% 100%,
+        var(--mgold) 4.35em,
+        var(--black) 4.4em,
+        var(--black) 49.5%,
+        var(--blackT) 50%
+      )
+      5em 24em / 10em 10em,
+    radial-gradient(100% 200% at 50% 0%, var(--mgold) 49.5%, var(--mgoldT) 50%)
+      5.6em 34em / 8.75em 1.5em,
+    radial-gradient(100% 200% at 50% 0%, var(--black) 49.5%, var(--blackT) 50%)
+      5em 34em / 10em 2em,
+    // 497 tk ka shit
+    radial-gradient(
+        0.7em 0.7em at 5.15em 24em,
+        var(--black) 49%,
+        var(--blackT) 50%
+      ),
+    radial-gradient(
+      0.7em 0.7em at 14.85em 24em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+        100% 400% at 50% 125%,
+        var(--blackT) 6.15em,
+        var(--black) 6.2em,
+        var(--black) 6.4em,
+        var(--black) 49.5%,
+        var(--blackT) 50%
+      )
+      3.25em 24em / 13.5em 8.5em,
+    radial-gradient(
+      0.55em 0.55em at 3.6em 32.5em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.55em 0.55em at 16.4em 32.5em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(300% 200% at 150% 0%, var(--gold) 49.75%, var(--goldT) 50%)
+      1.8em 32.8em / 8.4em 4.2em,
+    radial-gradient(
+        305% 200% at 150% 0%,
+        var(--black) 49.75%,
+        var(--blackT) 50%
+      )
+      1.3em 32.8em / 8.9em 4.7em,
+    radial-gradient(300% 200% at -50% 0%, var(--gold) 49.75%, var(--goldT) 50%)
+      10em 32.8em / 8.4em 4.2em,
+    radial-gradient(
+        305% 200% at -50% 0%,
+        var(--black) 49.75%,
+        var(--blackT) 50%
+      )
+      10em 32.8em / 8.9em 4.7em,
+    linear-gradient(
+        102deg,
+        var(--blackT) 3.1em,
+        var(--black) 3.15em,
+        var(--black) 3.75em,
+        var(--gold) 3.8em
+      )
+      0.9em 19em / 9.3em 15em,
+    linear-gradient(
+        -102deg,
+        var(--blackT) 3.1em,
+        var(--black) 3.15em,
+        var(--black) 3.75em,
+        var(--gold) 3.8em
+      )
+      10em 19em / 9.3em 15em,
+    radial-gradient(
+      0.8em 0.8em at 2.5em 35.8em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 3.7em 36.6em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 5.1em 37.3em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 6.6em 37.8em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 8.3em 38.2em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 10.1em 38.4em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 11.9em 38.2em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 13.6em 37.8em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 15.2em 37.3em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 16.6em 36.6em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    radial-gradient(
+      0.8em 0.8em at 17.8em 35.8em,
+      var(--black) 49%,
+      var(--blackT) 50%
+    ),
+    linear-gradient(
+        105deg,
+        var(--blackT) 3.35em,
+        var(--black) 3.4em,
+        var(--black) 3.9em,
+        var(--mgold) 3.95em
+      )
+      0em 19.2em / 9.3em 12.9em,
+    linear-gradient(
+        45deg,
+        var(--blackT) 0.75em,
+        var(--black) 0.8em,
+        var(--black) 1.15em,
+        var(--mgold) 1.2em
+      )
+      0em 32.1em / 1.5em 1.1em,
+    linear-gradient(
+        -105deg,
+        var(--blackT) 3.35em,
+        var(--black) 3.4em,
+        var(--black) 3.9em,
+        var(--mgold) 3.95em
+      )
+      10.9em 19.2em / 9.3em 12.9em,
+    linear-gradient(
+        -45deg,
+        var(--blackT) 0.75em,
+        var(--black) 0.8em,
+        var(--black) 1.15em,
+        var(--mgold) 1.2em
+      )
+      18.7em 32.1em / 1.5em 1.1em,
+    linear-gradient(
+        102deg,
+        var(--blackT) 0.18em,
+        var(--black) 0.23em,
+        var(--black) 0.83em,
+        var(--mgold) 0.88em
+      )
+      0.7em 34em / 2.5em 1em,
+    linear-gradient(
+        -102deg,
+        var(--blackT) 0.18em,
+        var(--black) 0.23em,
+        var(--black) 0.83em,
+        var(--mgold) 0.88em
+      )
+      17em 34em / 2.5em 1em,
+    radial-gradient(
+        200% 200% at 100% 0%,
+        var(--mgold) 49.75%,
+        var(--mgoldT) 50%
+      )
+      1.35em 35em / 8.8em 4.4em,
+    radial-gradient(200% 200% at 0% 0%, var(--mgold) 49.75%, var(--mgoldT) 50%)
+      10.05em 35em / 8.8em 4.4em,
+    radial-gradient(
+        200% 200% at 100% 0%,
+        var(--black) 49.75%,
+        var(--blackT) 50%
+      )
+      0.7em 35em / 9.4em 5em,
+    radial-gradient(200% 200% at 0% 0%, var(--black) 49.75%, var(--blackT) 50%)
+      10.1em 35em / 9.4em 5em,
+    // 556 line
     // benchod
     radial-gradient(120% 100% at 50% 0, var(--black) 49%, var(--blackT) 50%) 4em
       17.5em / 12.1em 6.8em;
