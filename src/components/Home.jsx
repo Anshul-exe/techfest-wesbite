@@ -18,7 +18,7 @@ const GlitchLetter = ({ children }) => {
   return (
     <motion.span
       className="relative inline-block text-transparent"
-      style={{ WebkitTextStroke: "2px white" }}
+      style={{ WebkitTextStroke: "3px white" }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{ type: "spring", duration: 0.5, bounce: 0.5 }}

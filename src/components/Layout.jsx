@@ -4,10 +4,15 @@ import {
   Routes,
   Route,
   useNavigate,
-  useLocation
+  useLocation,
 } from "react-router-dom";
-import { Search } from "lucide-react";
-import { motion, useScroll, useSpring, useTransform, useInView } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useInView,
+} from "framer-motion";
 import GlitchHomepage from "./Home";
 import AboutSection from "./Aboutus";
 import BranchingTimeline from "./Timeline";
@@ -53,7 +58,7 @@ const ProgressBar = () => {
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
   return (
@@ -62,7 +67,9 @@ const ProgressBar = () => {
         className="absolute top-0 left-0 right-0 h-full bg-red-500 origin-left"
         style={{ scaleX }}
       />
-      <motion.div style={{ x: useTransform(scrollYProgress, [0, 1], ['0%', '100%']) }}>
+      <motion.div
+        style={{ x: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}
+      >
         <ProgressIndicator progress={scrollYProgress} />
       </motion.div>
     </div>
@@ -72,9 +79,9 @@ const ProgressBar = () => {
 // Scroll Lock Component
 const ScrollLock = ({ children }) => {
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, []);
 
@@ -92,7 +99,7 @@ const Navbar = () => {
       if (element) {
         element.scrollIntoView({
           behavior: "smooth",
-          block: "start"
+          block: "start",
         });
       }
     }, 100);
@@ -119,7 +126,7 @@ const Navbar = () => {
             { name: "Home", path: "/", id: "home" },
             { name: "About us", path: "/about", id: "about" },
             { name: "Past Events", path: "/timeline", id: "timeline" },
-            { name: "Sponsors", path: "/sponsors", id: "sponsors" }
+            { name: "Sponsors", path: "/sponsors", id: "sponsors" },
           ].map((item) => (
             <motion.button
               key={item.path}
@@ -133,12 +140,6 @@ const Navbar = () => {
               {item.name}
             </motion.button>
           ))}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Search className="w-6 h-6 cursor-pointer text-white hover:text-red-500 transition-colors" />
-          </motion.div>
         </div>
       </div>
     </motion.nav>
@@ -148,13 +149,13 @@ const Navbar = () => {
 const MainContent = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const location = useLocation();
-  
+
   useEffect(() => {
     // Ensure home page is visible first
-    if (location.pathname === '/') {
-      const element = document.getElementById('home');
+    if (location.pathname === "/") {
+      const element = document.getElementById("home");
       if (element) {
-        element.scrollIntoView({ behavior: 'instant' });
+        element.scrollIntoView({ behavior: "instant" });
       }
     }
     setIsLoading(false);
@@ -179,33 +180,19 @@ const MainContent = () => {
 
   return (
     <div className="min-h-screen bg-black snap-y snap-mandatory overflow-y-auto">
-      <section 
-        id="home" 
-        className="min-h-screen snap-start pt-24"
-      >
+      <section id="home" className="min-h-screen snap-start pt-24">
         <GlitchHomepage />
       </section>
 
-      <section 
-        id="about" 
-        className="min-h-screen snap-start pt-24"
-      >
+      <section id="about" className="min-h-screen snap-start pt-24">
         <AboutSection />
       </section>
 
-      <section 
-        id="timeline" 
-        className="min-h-screen snap-start pt-24"
-      >
-        <TVABackground/>
-
-         
+      <section id="timeline" className="min-h-screen snap-start pt-24">
+        <TVABackground />
       </section>
 
-      <section 
-        id="sponsors" 
-        className="min-h-screen snap-start pt-24"
-      >
+      <section id="sponsors" className="min-h-screen snap-start pt-24">
         <HoverCards />
       </section>
     </div>
@@ -232,3 +219,4 @@ const Layout = () => {
 };
 
 export default Layout;
+
