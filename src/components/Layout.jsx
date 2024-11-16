@@ -18,6 +18,7 @@ import AboutSection from "./Aboutus";
 import BranchingTimeline from "./Timeline";
 import HoverCards from "./Card";
 import TVABackground from "./TvaBg";
+import Footer from "./Footer";
 
 // Progress Indicator SVG
 const ProgressIndicator = ({ progress }) => (
@@ -195,6 +196,10 @@ const MainContent = () => {
       <section id="sponsors" className="min-h-screen snap-start pt-24">
         <HoverCards />
       </section>
+
+      <section id="footer" className="min-h-screen snap-start pt-24">
+        <Footer />
+      </section>
     </div>
   );
 };
@@ -219,4 +224,3 @@ const Layout = () => {
 };
 
 export default Layout;
-
