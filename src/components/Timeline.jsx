@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const BranchingTimeline = ({
   events = [
@@ -8,8 +8,8 @@ const BranchingTimeline = ({
     { id: 4, title: "Timeline Reset", date: "TVA Intervention", branch: 1 },
     { id: 5, title: "Timeline Reset", date: "TVA Intervention", branch: -1 },
     { id: 6, title: "Timeline Reset", date: "TVA Intervention", branch: 1 },
-    { id: 7, title: "Main Timeline", date: "Restored", branch: 0 }
-  ]
+    { id: 7, title: "Main Timeline", date: "Restored", branch: 0 },
+  ],
 }) => {
   const [hoveredEvent, setHoveredEvent] = useState(null);
 
@@ -22,23 +22,26 @@ const BranchingTimeline = ({
   const getBranchEndPoint = (startX, branch) => {
     if (branch === 0) return { x: startX, y: centerY };
     const endX = startX + horizontalOffset / 2;
-    const endY = centerY + (branch * branchLength);
+    const endY = centerY + branch * branchLength;
     return { x: endX, y: endY };
   };
 
   const getBranchPath = (startX, branch) => {
-    if (branch === 0) return '';
+    if (branch === 0) return "";
     const endpoint = getBranchEndPoint(startX, branch);
     const controlX1 = startX + horizontalOffset / 4;
     const controlY1 = centerY;
     const controlX2 = startX + horizontalOffset / 3;
-    const controlY2 = centerY + (branch * branchLength * 0.5);
+    const controlY2 = centerY + branch * branchLength * 0.5;
     return `M ${startX} ${centerY} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${endpoint.x} ${endpoint.y}`;
   };
 
   return (
     <div className="w-full p-8 rounded-lg overflow-x-auto">
-      <div className="relative" style={{ width: totalWidth, height: totalHeight }}>
+      <div
+        className="relative"
+        style={{ width: totalWidth, height: totalHeight }}
+      >
         <svg
           width={totalWidth}
           height={totalHeight}
@@ -54,7 +57,13 @@ const BranchingTimeline = ({
               </feMerge>
             </filter>
 
-            <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <filter
+              id="strongGlow"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%"
+            >
               <feGaussianBlur stdDeviation="6" result="coloredBlur" />
               <feMerge>
                 <feMergeNode in="coloredBlur" />
@@ -104,48 +113,58 @@ const BranchingTimeline = ({
           </g>
 
           {/* Branches with glow */}
-          {events.map((event, index) => (
-            event.branch !== 0 && (
-              <g key={`branch-${event.id}`}>
-                {/* Branch outer glow */}
-                <path
-                  d={getBranchPath(index * horizontalOffset + 100, event.branch)}
-                  stroke="#f8861e"
-                  strokeWidth="6"
-                  strokeOpacity="0.3"
-                  fill="none"
-                  filter="url(#strongGlow)"
-                />
+          {events.map(
+            (event, index) =>
+              event.branch !== 0 && (
+                <g key={`branch-${event.id}`}>
+                  {/* Branch outer glow */}
+                  <path
+                    d={getBranchPath(
+                      index * horizontalOffset + 100,
+                      event.branch,
+                    )}
+                    stroke="#f8861e"
+                    strokeWidth="6"
+                    strokeOpacity="0.3"
+                    fill="none"
+                    filter="url(#strongGlow)"
+                  />
 
-                {/* Branch inner glow */}
-                <path
-                  d={getBranchPath(index * horizontalOffset + 100, event.branch)}
-                  stroke="#f8861e"
-                  strokeWidth="4"
-                  strokeOpacity="0.6"
-                  fill="none"
-                  filter="url(#neonGlow)"
-                />
+                  {/* Branch inner glow */}
+                  <path
+                    d={getBranchPath(
+                      index * horizontalOffset + 100,
+                      event.branch,
+                    )}
+                    stroke="#f8861e"
+                    strokeWidth="4"
+                    strokeOpacity="0.6"
+                    fill="none"
+                    filter="url(#neonGlow)"
+                  />
 
-                {/* Branch base line */}
-                <path
-                  d={getBranchPath(index * horizontalOffset + 100, event.branch)}
-                  stroke="#f8861e"
-                  strokeWidth="2"
-                  fill="none"
-                />
+                  {/* Branch base line */}
+                  <path
+                    d={getBranchPath(
+                      index * horizontalOffset + 100,
+                      event.branch,
+                    )}
+                    stroke="#f8861e"
+                    strokeWidth="2"
+                    fill="none"
+                  />
 
-                {/* Branch connection point */}
-                <circle
-                  cx={index * horizontalOffset + 100}
-                  cy={centerY}
-                  r="4"
-                  fill="#f8861e"
-                  filter="url(#strongGlow)"
-                />
-              </g>
-            )
-          ))}
+                  {/* Branch connection point */}
+                  <circle
+                    cx={index * horizontalOffset + 100}
+                    cy={centerY}
+                    r="4"
+                    fill="#f8861e"
+                    filter="url(#strongGlow)"
+                  />
+                </g>
+              ),
+          )}
         </svg>
 
         <div className="relative h-full">
@@ -171,8 +190,8 @@ const BranchingTimeline = ({
                   >
                     <div
                       style={{
-                        background: '#f8861e',
-                        boxShadow: '0 0 10px #f8861e, 0 0 20px #f8861e'
+                        background: "#f8861e",
+                        boxShadow: "0 0 10px #f8861e, 0 0 20px #f8861e",
                       }}
                       className="
                         absolute w-6 h-6
@@ -185,7 +204,8 @@ const BranchingTimeline = ({
 
                   {/* Event card */}
                   {hoveredEvent === event.id && (
-                    <div className="
+                    <div
+                      className="
                       absolute z-10
                       transform -translate-x-1/2
                       bg-gray-800/90 p-4 rounded-lg
@@ -195,11 +215,15 @@ const BranchingTimeline = ({
                       w-48
                       shadow-lg
                       mt-8
-                    " style={{
-                      fontFamily: 'IBM Plex Mono',
-                      boxShadow: '0 0 10px rgba(248, 134, 30, 0.3)'
-                    }}>
-                      <h3 className="text-[#f8861e] font-medium mb-1">{event.title}</h3>
+                    "
+                      style={{
+                        fontFamily: "IBM Plex Mono",
+                        boxShadow: "0 0 10px rgba(248, 134, 30, 0.3)",
+                      }}
+                    >
+                      <h3 className="text-[#f8861e] font-medium mb-1">
+                        {event.title}
+                      </h3>
                       <p className="text-gray-400 text-sm">{event.date}</p>
                     </div>
                   )}
