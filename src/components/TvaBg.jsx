@@ -1,10 +1,10 @@
-import React from 'react';
-import Icon1 from '../assets/icon1.png';
-import Icon2 from '../assets/icon2.png';
-import Icon3 from '../assets/icon3_.png';
-import Icon4 from '../assets/icon4.png';
-import BranchingTimeline from './Timeline';
-import { motion } from 'framer-motion';
+import React from "react";
+import Icon1 from "../assets/Icon1.png";
+import Icon2 from "../assets/icon2.png";
+import Icon3 from "../assets/icon3_.png";
+import Icon4 from "../assets/icon4.png";
+import BranchingTimeline from "./Timeline";
+import { motion } from "framer-motion";
 
 const TVABackground = ({ children }) => {
   return (
@@ -34,9 +34,9 @@ const TVABackground = ({ children }) => {
 
       {/* Glitch Timeline Text in Top Right */}
       <div className="absolute top-6 right-8">
-        <motion.h1 
+        <motion.h1
           className="glitch-text text-[50px] font-bold"
-          style={{ fontFamily: 'Doto, sans-serif' }}
+          style={{ fontFamily: "Doto, sans-serif" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -64,16 +64,16 @@ const TVABackground = ({ children }) => {
       </div>
 
       {/* TVA Logo in Bottom Right with Larger Font */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-4 right-4 text-[#f8861e] font-bold text-5xl"
-        style={{ fontFamily: 'Doto, sans-serif' }}
+        style={{ fontFamily: "Doto, sans-serif" }}
       >
         TVA
       </motion.div>
 
       {/* Content Area */}
       <div className="relative w-full h-full p-8">
-        <BranchingTimeline/>
+        <BranchingTimeline />
       </div>
 
       {/* Glitch Effect Styles */}
@@ -106,32 +106,46 @@ const TVABackground = ({ children }) => {
 
         @keyframes glitch {
           0% {
-            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
-                         0.025em 0.04em 0 #fffc00;
+            text-shadow:
+              0.05em 0 0 #00fffc,
+              -0.03em -0.04em 0 #fc00ff,
+              0.025em 0.04em 0 #fffc00;
           }
           15% {
-            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
-                         0.025em 0.04em 0 #fffc00;
+            text-shadow:
+              0.05em 0 0 #00fffc,
+              -0.03em -0.04em 0 #fc00ff,
+              0.025em 0.04em 0 #fffc00;
           }
           16% {
-            text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
-                         -0.05em -0.05em 0 #fffc00;
+            text-shadow:
+              -0.05em -0.025em 0 #00fffc,
+              0.025em 0.035em 0 #fc00ff,
+              -0.05em -0.05em 0 #fffc00;
           }
           49% {
-            text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
-                         -0.05em -0.05em 0 #fffc00;
+            text-shadow:
+              -0.05em -0.025em 0 #00fffc,
+              0.025em 0.035em 0 #fc00ff,
+              -0.05em -0.05em 0 #fffc00;
           }
           50% {
-            text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
-                         0 -0.04em 0 #fffc00;
+            text-shadow:
+              0.05em 0.035em 0 #00fffc,
+              0.03em 0 0 #fc00ff,
+              0 -0.04em 0 #fffc00;
           }
           99% {
-            text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
-                         0 -0.04em 0 #fffc00;
+            text-shadow:
+              0.05em 0.035em 0 #00fffc,
+              0.03em 0 0 #fc00ff,
+              0 -0.04em 0 #fffc00;
           }
           100% {
-            text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
-                         -0.04em -0.025em 0 #fffc00;
+            text-shadow:
+              -0.05em 0 0 #00fffc,
+              -0.025em -0.04em 0 #fc00ff,
+              -0.04em -0.025em 0 #fffc00;
           }
         }
       `}</style>
@@ -140,3 +154,4 @@ const TVABackground = ({ children }) => {
 };
 
 export default TVABackground;
+

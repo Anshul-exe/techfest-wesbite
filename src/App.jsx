@@ -12,10 +12,10 @@ function App() {
 
   return (
     <>
-  <Layout />
-    {/* <VenomSymbioteEffect/> */}
-  </>
-);
+      <Layout />
+      {/* <VenomSymbioteEffect/> */}
+    </>
+  );
 }
 
 export default App;
