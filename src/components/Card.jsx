@@ -48,11 +48,53 @@ const HoverCards = () => {
       imageUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg",
       titleUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-title.png",
       characterUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-character.webp"
+    },
+    {
+      link: "https://www.mythrillfiction.com/the-dark-rider",
+      imageUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg",
+      titleUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-title.png",
+      characterUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp"
+    },
+    {
+      link: "https://www.mythrillfiction.com/force-mage",
+      imageUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg",
+      titleUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-title.png",
+      characterUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-character.webp"
+    },
+    {
+      link: "https://www.mythrillfiction.com/the-dark-rider",
+      imageUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg",
+      titleUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-title.png",
+      characterUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp"
+    },
+    {
+      link: "https://www.mythrillfiction.com/force-mage",
+      imageUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg",
+      titleUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-title.png",
+      characterUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-character.webp"
+    },
+    {
+      link: "https://www.mythrillfiction.com/the-dark-rider",
+      imageUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg",
+      titleUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-title.png",
+      characterUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp"
+    },
+    {
+      link: "https://www.mythrillfiction.com/force-mage",
+      imageUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg",
+      titleUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-title.png",
+      characterUrl: "https://ggayane.github.io/css-experiments/cards/force_mage-character.webp"
+    },
+    {
+      link: "https://www.mythrillfiction.com/the-dark-rider",
+      imageUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg",
+      titleUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-title.png",
+      characterUrl: "https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp"
     }
   ];
 
   return (
-    <div className="relative w-full min-h-screen bg-[#160C0C] flex flex-col justify-center items-center p-8">
+    <div className="relative w-full min-h-screen bg-black/50 flex flex-col justify-center items-center p-8">
       <h1 className="font-['Doto'] text-6xl font-bold mb-16 text-white tracking-wider relative">
         Our Events
         <span className="absolute -bottom-4 left-0 w-full h-1 bg-white/20"></span>

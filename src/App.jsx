@@ -1,13 +1,18 @@
 import { useState } from "react";
 import "./App.css";
 import Layout from "./components/Layout";
-
+import VenomSymbioteEffect from "./components/Venom";
+import GlitchHomepage from "./components/Home";
+import EyeOfAgamotto from "./components/EyeOfAgamotto";
+import AboutSection from "./components/Aboutus";
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-  <Layout /></>
+  <Layout />
+    {/* <VenomSymbioteEffect/> */}
+  </>
 );
 }
 

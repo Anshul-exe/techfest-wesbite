@@ -13,7 +13,7 @@ import AboutSection from "./Aboutus";
 import BranchingTimeline from "./Timeline";
 import HoverCards from "./Card";
 import TVABackground from "./TvaBg";
-
+import EyeOfAgamotto from "./EyeOfAgamotto";
 // Progress Indicator SVG
 const ProgressIndicator = ({ progress }) => (
   <svg
@@ -104,13 +104,15 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
+      style={{ fontFamily: 'Doto, sans-serif' }}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <motion.button
           onClick={() => scrollToSection("home", "/")}
-          className="text-2xl font-bold text-white hover:text-red-500 transition-colors"
+          className="text-2xl font-bold text-white hover:text-red-500 transition-colors tracking-wider"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          style={{ fontFamily: 'Doto, sans-serif', letterSpacing: '2px' }}
         >
           Glitch
         </motion.button>
@@ -118,17 +120,22 @@ const Navbar = () => {
           {[
             { name: "Home", path: "/", id: "home" },
             { name: "About us", path: "/about", id: "about" },
-            { name: "Past Events", path: "/timeline", id: "timeline" },
-            { name: "Sponsors", path: "/sponsors", id: "sponsors" }
+            { name: "Sacred TimeLine", path: "/timeline", id: "timeline" },
+            { name: "Our events", path: "/sponsors", id: "sponsors" }
           ].map((item) => (
             <motion.button
               key={item.path}
               onClick={() => scrollToSection(item.id, item.path)}
-              className={`text-white hover:text-red-500 transition-colors ${
+              className={`text-white hover:text-red-500 transition-colors tracking-wide ${
                 location.pathname === item.path ? "text-red-500" : ""
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              style={{ 
+                fontFamily: 'Doto, sans-serif',
+                letterSpacing: '1px',
+                fontSize: '1.05rem'
+              }}
             >
               {item.name}
             </motion.button>
@@ -144,6 +151,7 @@ const Navbar = () => {
     </motion.nav>
   );
 };
+
 
 const MainContent = () => {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -190,7 +198,7 @@ const MainContent = () => {
         id="about" 
         className="min-h-screen snap-start pt-24"
       >
-        <AboutSection />
+        <AboutSection><EyeOfAgamotto/></AboutSection>
       </section>
 
       <section 

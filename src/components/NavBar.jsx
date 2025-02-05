@@ -11,8 +11,8 @@ export default function NavBar() {
             <div className='flex justify-between w-1/2 font-semibold'>
                 <button>Home</button>
                 <button>About Us</button>
-                <button>Past Events</button>
-                <button>Sponsors</button>
+                <button>Sacred TimeLine</button>
+                <button>Our Events</button>
             </div>
 
             <button>
