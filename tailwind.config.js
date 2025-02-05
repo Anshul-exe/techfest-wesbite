@@ -1,8 +1,7 @@
-// tailwind.config.js
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+import flowbite from "flowbite-react/tailwind";
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", flowbite.content(), "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       animation: {
@@ -16,5 +15,6 @@ module.exports = {
       }
     },
   },
-  plugins: [],
-}
+  plugins: [flowbite.plugin()],
+};
+

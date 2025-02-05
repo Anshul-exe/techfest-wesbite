@@ -11,15 +11,15 @@ const TVABackground = ({ children }) => {
     <div
       className="relative w-full h-full p-4"
       style={{
-        backgroundColor: '#160C0C',
-        border: '2px solid #f8861e',
-        boxShadow: '0 0 15px #f8861e, 0 0 30px #f8861e',
+        backgroundColor: "#160C0C",
+        border: "2px solid #f8861e",
+        boxShadow: "0 0 15px #f8861e, 0 0 30px #f8861e",
       }}
     >
       {/* Outer Border */}
       <div
         className="absolute inset-0 border border-[#f8861e]"
-        style={{ boxShadow: '0 0 5px #f8861e' }}
+        style={{ boxShadow: "0 0 5px #f8861e" }}
       ></div>
 
       {/* Grid background */}
@@ -27,8 +27,8 @@ const TVABackground = ({ children }) => {
         className="absolute inset-0 grid"
         style={{
           backgroundImage:
-            'linear-gradient(#1d1d1d 1px, transparent 1px), linear-gradient(90deg, #1d1d1d 1px, transparent 1px)',
-          backgroundSize: '20px 20px',
+            "linear-gradient(#1d1d1d 1px, transparent 1px), linear-gradient(90deg, #1d1d1d 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
         }}
       ></div>
 

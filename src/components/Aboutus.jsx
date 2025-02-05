@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import React, { useEffect } from "react";
+import EyeOfAgamotto from "./EyeOfAgamotto";
 
 const AboutSection = ({ component }) => {
   useEffect(() => {
-    document.body.style.scrollSnapType = 'y mandatory';
+    document.body.style.scrollSnapType = "y mandatory";
     return () => {
-      document.body.style.scrollSnapType = '';
+      document.body.style.scrollSnapType = "";
     };
   }, []);
 
