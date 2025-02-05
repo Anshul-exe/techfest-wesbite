@@ -19,6 +19,7 @@ import BranchingTimeline from "./Timeline";
 import HoverCards from "./Card";
 import TVABackground from "./TvaBg";
 import EyeOfAgamotto from "./EyeOfAgamotto";
+import SponsorsGrid from "./Sponsers";
 import Footer from "./Footer";
 
 // Progress Indicator SVG
@@ -113,7 +114,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-      style={{ fontFamily: 'Doto, sans-serif' }}
+      style={{ fontFamily: "Doto, sans-serif" }}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <motion.button
@@ -121,7 +122,7 @@ const Navbar = () => {
           className="text-2xl font-bold text-white hover:text-red-500 transition-colors tracking-wider"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          style={{ fontFamily: 'Doto, sans-serif', letterSpacing: '2px' }}
+          style={{ fontFamily: "Doto, sans-serif", letterSpacing: "2px" }}
         >
           Glitch
         </motion.button>
@@ -130,7 +131,7 @@ const Navbar = () => {
             { name: "Home", path: "/", id: "home" },
             { name: "About us", path: "/about", id: "about" },
             { name: "Sacred TimeLine", path: "/timeline", id: "timeline" },
-            { name: "Our events", path: "/sponsors", id: "sponsors" }
+            { name: "Our events", path: "/sponsors", id: "sponsors" },
           ].map((item) => (
             <motion.button
               key={item.path}
@@ -140,10 +141,10 @@ const Navbar = () => {
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              style={{ 
-                fontFamily: 'Doto, sans-serif',
-                letterSpacing: '1px',
-                fontSize: '1.05rem'
+              style={{
+                fontFamily: "Doto, sans-serif",
+                letterSpacing: "1px",
+                fontSize: "1.05rem",
               }}
             >
               {item.name}
@@ -154,7 +155,6 @@ const Navbar = () => {
     </motion.nav>
   );
 };
-
 
 const MainContent = () => {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -194,11 +194,10 @@ const MainContent = () => {
         <GlitchHomepage />
       </section>
 
-      <section 
-        id="about" 
-        className="min-h-screen snap-start pt-24"
-      >
-        <AboutSection><EyeOfAgamotto/></AboutSection>
+      <section id="about" className="min-h-screen snap-start pt-24">
+        <AboutSection>
+          <EyeOfAgamotto />
+        </AboutSection>
       </section>
 
       <section id="timeline" className="min-h-screen snap-start pt-24">
@@ -206,7 +205,7 @@ const MainContent = () => {
       </section>
 
       <section id="sponsors" className="min-h-screen snap-start pt-24">
-        <HoverCards />
+        <SponsorsGrid />
       </section>
 
       <section id="footer" className="min-h-screen snap-start pt-24">
