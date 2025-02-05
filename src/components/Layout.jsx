@@ -18,12 +18,9 @@ import AboutSection from "./Aboutus";
 import BranchingTimeline from "./Timeline";
 import HoverCards from "./Card";
 import TVABackground from "./TvaBg";
-<<<<<<< HEAD
 import EyeOfAgamotto from "./EyeOfAgamotto";
-=======
 import Footer from "./Footer";
 
->>>>>>> be71618f699621b6beb3bb187cd9061407bc5e5d
 // Progress Indicator SVG
 const ProgressIndicator = ({ progress }) => (
   <svg
@@ -132,13 +129,8 @@ const Navbar = () => {
           {[
             { name: "Home", path: "/", id: "home" },
             { name: "About us", path: "/about", id: "about" },
-<<<<<<< HEAD
             { name: "Sacred TimeLine", path: "/timeline", id: "timeline" },
             { name: "Our events", path: "/sponsors", id: "sponsors" }
-=======
-            { name: "Past Events", path: "/timeline", id: "timeline" },
-            { name: "Sponsors", path: "/sponsors", id: "sponsors" },
->>>>>>> be71618f699621b6beb3bb187cd9061407bc5e5d
           ].map((item) => (
             <motion.button
               key={item.path}
@@ -202,16 +194,11 @@ const MainContent = () => {
         <GlitchHomepage />
       </section>
 
-<<<<<<< HEAD
       <section 
         id="about" 
         className="min-h-screen snap-start pt-24"
       >
         <AboutSection><EyeOfAgamotto/></AboutSection>
-=======
-      <section id="about" className="min-h-screen snap-start pt-24">
-        <AboutSection />
->>>>>>> be71618f699621b6beb3bb187cd9061407bc5e5d
       </section>
 
       <section id="timeline" className="min-h-screen snap-start pt-24">
