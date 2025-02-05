@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 
 const BranchingTreeTimeline = ({
@@ -13,11 +13,33 @@ const BranchingTreeTimeline = ({
   ],
 }) => {
   const [hoveredEvent, setHoveredEvent] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const timelineRef = useRef(null);
+  const mainLineControls = useAnimationControls();
+
   const centerY = 300;
   const branchLength = 100;
   const horizontalOffset = 160;
   const totalWidth = events.length * horizontalOffset;
   const totalHeight = 600;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          mainLineControls.start("visible");
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    if (timelineRef.current) {
+      observer.observe(timelineRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [mainLineControls]);
 
   const getBranchEndPoint = (startX, branch) => {
     if (branch === 0) return { x: startX, y: centerY };
@@ -50,7 +72,7 @@ const BranchingTreeTimeline = ({
   const calculateBranchDelay = (index) => {
     const branchPosition =
       (index * horizontalOffset + 100) / (totalWidth - 100);
-    return branchPosition * 3; // 3 seconds is main line duration
+    return branchPosition * 3;
   };
 
   const branchVariants = (index) => ({
@@ -82,7 +104,7 @@ const BranchingTreeTimeline = ({
   });
 
   return (
-    <div className="w-full p-8 rounded-lg overflow-x-auto">
+    <div className="w-full p-8 rounded-lg overflow-x-auto" ref={timelineRef}>
       <div
         className="relative"
         style={{ width: totalWidth, height: totalHeight }}
@@ -98,11 +120,11 @@ const BranchingTreeTimeline = ({
               y1={centerY}
               x2={totalWidth - 50}
               y2={centerY}
-              stroke="#228B22"
+              stroke="#f8861e"
               strokeWidth="6"
               strokeOpacity="0.6"
               initial="hidden"
-              animate="visible"
+              animate={mainLineControls}
               variants={mainLineVariants}
             />
           </g>
@@ -115,21 +137,21 @@ const BranchingTreeTimeline = ({
                       index * horizontalOffset + 100,
                       event.branch,
                     )}
-                    stroke="#228B22"
+                    stroke="#f8861e"
                     strokeWidth="4"
                     fill="none"
                     initial="hidden"
-                    animate="visible"
+                    animate={isVisible ? "visible" : "hidden"}
                     variants={branchVariants(index)}
                   />
                   <motion.circle
                     cx={index * horizontalOffset + 100}
                     cy={centerY}
                     r="5"
-                    fill="#228B22"
+                    fill="#f8861e"
                     variants={nodeVariants(index)}
                     initial="hidden"
-                    animate="visible"
+                    animate={isVisible ? "visible" : "hidden"}
                   />
                 </g>
               ),
@@ -145,7 +167,7 @@ const BranchingTreeTimeline = ({
                 className="absolute"
                 style={{ left: `${endpoint.x}px`, top: `${endpoint.y}px` }}
                 initial="hidden"
-                animate="visible"
+                animate={isVisible ? "visible" : "hidden"}
                 variants={nodeVariants(index)}
               >
                 <div
@@ -153,11 +175,11 @@ const BranchingTreeTimeline = ({
                   onMouseEnter={() => setHoveredEvent(event.id)}
                   onMouseLeave={() => setHoveredEvent(null)}
                 >
-                  <div className="absolute w-6 h-6 bg-green-600 rounded-full" />
+                  <div className="absolute w-6 h-6 bg-[#f8861e] rounded-full" />
                 </div>
                 {hoveredEvent === event.id && (
-                  <div className="absolute z-10 transform -translate-x-1/2 bg-gray-800 p-4 rounded-lg border border-green-500 backdrop-blur-md transition-all w-48 shadow-lg mt-8">
-                    <h3 className="text-green-500 font-medium mb-1">
+                  <div className="absolute z-10 transform -translate-x-1/2 bg-gray-800 p-4 rounded-lg border border-[#f8861e] backdrop-blur-md transition-all w-48 shadow-lg mt-8">
+                    <h3 className="text-[#f8861e] font-medium mb-1">
                       {event.title}
                     </h3>
                     <p className="text-gray-400 text-sm">{event.date}</p>
@@ -173,3 +195,4 @@ const BranchingTreeTimeline = ({
 };
 
 export default BranchingTreeTimeline;
+
