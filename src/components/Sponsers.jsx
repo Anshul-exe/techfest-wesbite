@@ -91,7 +91,7 @@ const SponsorsGrid = () => {
           />
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-20 max-w-6xl mx-auto mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-20 max-w-6xl mx-auto mt-20 p-[50px]">
         {sponsors.slice(4).map((sponsor, index) => (
           <SponsorCard
             key={sponsor.name}
@@ -102,13 +102,15 @@ const SponsorsGrid = () => {
         ))}
       </div>
 
+<hr />
       {/* Counter Component */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-24 flex justify-center items-center"
+        className="mt-24 flex justify-center items-center m-auto"
       >
+
         <Counter />
       </motion.div>
     </motion.div>

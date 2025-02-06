@@ -279,15 +279,15 @@ const MainContent = () => {
 
       <section id="sponsor" className="min-h-screen snap-start pt-16 md:pt-24">
         <SponsorsGrid />
-        <hr />
+
       </section>
 
       {/* <section id="counter" className="min-h-screen snap-start pt-16 md:pt-24"> */}
       {/*   <Counter /> */}
       {/* </section> */}
-
+      <hr />
       <section id="footer" className="min-h-screen snap-start pt-16 md:pt-24">
-        <hr />
+    
       <FAQ />
       <hr />
         <Footer />

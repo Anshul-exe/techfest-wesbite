@@ -42,7 +42,7 @@ const GlitchHomepage = () => {
         animate={{ scale: 1 }}
         transition={{ type: "spring", duration: 1, bounce: 0.5 }}
       >
-        <div className="w-80 h-80 bg-[#ef1897] rounded-full blur-3xl opacity-100" />
+        <div className="w-80 h-80 bg-[#ce0000] rounded-full blur-3xl opacity-100" />
       </motion.div>
       <div className="relative min-h-screen flex items-center justify-center">
         <motion.div
