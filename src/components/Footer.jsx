@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
-import glitchLogo from "../assets/image.png"; // Make sure to import your logo
+import glitchLogo from "../assets/image.png";
 
 const Footer = () => {
   const containerVariants = {

@@ -112,7 +112,7 @@ const Navbar = () => {
     { name: "Home", path: "/", id: "home" },
     { name: "About us", path: "/about", id: "about" },
     { name: "Sacred TimeLine", path: "/timeline", id: "timeline" },
-    { name: "Our events", path: "/sponsors", id: "sponsors" },
+    { name: "Our events", path: "/events", id: "events" },
   ];
 
   return (
@@ -269,16 +269,16 @@ const MainContent = () => {
         <TVABackground />
       </section>
 
-      <section id="sponsors" className="min-h-screen snap-start pt-16 md:pt-24">
-        <SponsorsGrid />
-      </section>
-
-      <section id="cards" className="min-h-screen snap-start pt-16 md:pt-24">
+      <section id="events" className="min-h-screen snap-start pt-16 md:pt-24">
         <HoverCards />
       </section>
 
-      <section id="footer" className="min-h-screen snap-start pt-16 md:pt-24">
+      <section id="counter" className="min-h-screen snap-start pt-16 md:pt-24">
         <Counter />
+      </section>
+
+      <section id="sponsor" className="min-h-screen snap-start pt-16 md:pt-24">
+        <SponsorsGrid />
       </section>
 
       <section id="footer" className="min-h-screen snap-start pt-16 md:pt-24">
@@ -308,3 +308,4 @@ const Layout = () => {
 };
 
 export default Layout;
+
