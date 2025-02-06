@@ -1,7 +1,7 @@
 import React from 'react';
 
 const EyeOfAgamotto = () => {
-  console.log("heloo");
+
   return (
     <div className="relative w-full min-h-screen">
       <style>
