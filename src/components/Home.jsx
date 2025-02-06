@@ -72,7 +72,7 @@ const GlitchHomepage = () => {
             animate={{ scale: 1 }}
             transition={{ type: "spring", duration: 1, bounce: 0.5 }}
           >
-            {"GLITCH".split("").map((letter, index) => (
+            {"GL!TCH".split("").map((letter, index) => (
               <GlitchLetter key={index}>{letter}</GlitchLetter>
             ))}
           </motion.h1>
