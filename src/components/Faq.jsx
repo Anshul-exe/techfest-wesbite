@@ -11,8 +11,8 @@ const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="max-w-screen-md mx-auto py-10 text-[#ef1897]">
-      <h2 className="text-[80px] font-bold text-center font-['Doto'] mb-6">FAQs</h2>
+    <div className="max-w-md mx-auto py-10 px-4 sm:px-6 text-[#ef1897]">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6">FAQs</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <div key={index} className="border-b border-[#ef1897] pb-2">
@@ -24,9 +24,9 @@ const FAQ = () => {
               <span>{activeIndex === index ? '-' : '+'}</span>
             </button>
             <div 
-              className={`transition-all overflow-hidden ${activeIndex === index ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}
+              className={`transition-all duration-300 overflow-hidden ${activeIndex === index ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
             >
-              <p className="mt-2 text-white">{faq.answer}</p>
+              <p className="mt-2 text-[#ef1897] text-sm sm:text-base">{faq.answer}</p>
             </div>
           </div>
         ))}
