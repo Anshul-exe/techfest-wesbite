@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Counter from "../components/NumberDaudao";
 
 // Import images
 import jdoodleImg from "../assets/jdoodle.jpg";
@@ -78,6 +79,8 @@ const SponsorsGrid = () => {
       >
         OUR SPONSORS
       </motion.h1>
+
+      {/* Sponsors Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-16 gap-y-20 max-w-7xl mx-auto">
         {sponsors.slice(0, 4).map((sponsor, index) => (
           <SponsorCard
@@ -98,6 +101,16 @@ const SponsorsGrid = () => {
           />
         ))}
       </div>
+
+      {/* Counter Component */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="mt-24 flex justify-center items-center"
+      >
+        <Counter />
+      </motion.div>
     </motion.div>
   );
 };
