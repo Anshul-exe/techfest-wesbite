@@ -194,11 +194,16 @@ const MainContent = () => {
         <GlitchHomepage />
       </section>
 
-      <section id="about" className="min-h-screen snap-start pt-24">
-        <AboutSection>
-          <EyeOfAgamotto />
-        </AboutSection>
-      </section>
+      <section
+  id="about"
+  className="min-h-screen snap-start pt-24 flex items-center justify-center"
+>
+  <div className="flex flex-row items-center justify-between gap-8 w-full">
+    <AboutSection className="w-1/2" />
+    <EyeOfAgamotto className="w-1/2" />
+  </div>
+</section>
+
 
       <section id="timeline" className="min-h-screen snap-start pt-24">
         <TVABackground />
