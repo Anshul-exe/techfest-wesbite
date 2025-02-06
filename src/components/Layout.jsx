@@ -22,7 +22,7 @@ import EyeOfAgamotto from "./EyeOfAgamotto";
 import SponsorsGrid from "./Sponsers";
 import Footer from "./Footer";
 import FAQ from "./Faq";
-import Counter from "./NumberDaudao";
+import Space404 from "./Error404";
 // Progress Indicator SVG
 const ProgressIndicator = ({ progress }) => (
   <svg
@@ -289,6 +289,10 @@ const MainContent = () => {
       <section id="footer" className="snap-start pt-16 md:pt-24">
         <Footer />
       </section>
+
+      <section id="shiiiiii" className="snap-start pt-16 md:pt-24">
+        <Space404 />
+      </section>
     </div>
   );
 };
@@ -304,6 +308,7 @@ const Layout = () => {
             <>
               <Navbar />
               <MainContent />
+              {/* <Space404 /> */}
             </>
           }
         />
