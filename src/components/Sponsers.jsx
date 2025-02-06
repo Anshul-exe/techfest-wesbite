@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Counter from "../components/NumberDaudao";
 
 // Import images
 import jdoodleImg from "../assets/jdoodle.jpg";

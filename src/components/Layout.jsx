@@ -273,12 +273,12 @@ const MainContent = () => {
         <HoverCards />
       </section>
 
-      <section id="counter" className="min-h-screen snap-start pt-16 md:pt-24">
-        <Counter />
-      </section>
-
       <section id="sponsor" className="min-h-screen snap-start pt-16 md:pt-24">
         <SponsorsGrid />
+      </section>
+
+      <section id="counter" className="min-h-screen snap-start pt-16 md:pt-24">
+        <Counter />
       </section>
 
       <section id="footer" className="min-h-screen snap-start pt-16 md:pt-24">
