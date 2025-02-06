@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const AboutSection = () => {
   useEffect(() => {
@@ -16,9 +16,9 @@ const AboutSection = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const titleVariants = {
@@ -28,9 +28,9 @@ const AboutSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.6, -0.05, 0.01, 0.99]
-      }
-    }
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
   };
 
   const containerVariants = {
@@ -38,18 +38,18 @@ const AboutSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3
-      }
-    }
+        staggerChildren: 0.3,
+      },
+    },
   };
 
   return (
     <motion.section
       className="bg-black/50 h-full snap-start flex justify-center items-center py-16 px-4"
-      style={{ scrollSnapAlign: 'start', fontFamily: 'Doto, sans-serif' }}
+      style={{ scrollSnapAlign: "start", fontFamily: "Doto, sans-serif" }}
     >
       <motion.div
-        className="flex flex-col items-start justify-start gap-8 max-w-screen-xl w-full"
+        className="flex flex-col items-start justify-start gap-8 max-w-screen-xl w-full ml-16" // Added ml-16 to shift it slightly right
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -67,15 +67,15 @@ const AboutSection = () => {
             variants={textVariants}
             whileHover={{ scale: 1.01 }}
           >
-            Glitch Tech Fest 2024 stands as an unparalleled opportunity for students
-            to flaunt their technical acumen amid a dynamic milieu of peers and
-            industry luminaries. With a rich tapestry of events spanning diverse
-            technological domains, participants engage in live interactions and
-            networking, cultivating invaluable connections essential for future
-            career trajectories. This convergence of talent not only fosters
-            personal growth but also offers a fertile ground for forging lasting
-            professional relationships, ensuring a transformative experience for
-            all involved.
+            Glitch Tech Fest 2024 stands as an unparalleled opportunity for
+            students to flaunt their technical acumen amid a dynamic milieu of
+            peers and industry luminaries. With a rich tapestry of events
+            spanning diverse technological domains, participants engage in live
+            interactions and networking, cultivating invaluable connections
+            essential for future career trajectories. This convergence of talent
+            not only fosters personal growth but also offers a fertile ground
+            for forging lasting professional relationships, ensuring a
+            transformative experience for all involved.
           </motion.p>
         </motion.div>
       </motion.div>

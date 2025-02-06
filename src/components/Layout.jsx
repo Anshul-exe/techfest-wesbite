@@ -124,12 +124,13 @@ const Navbar = () => {
       style={{ fontFamily: "Doto, sans-serif" }}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
+        {/* Logo */}
         <motion.button
           onClick={() => scrollToSection("home", "/")}
-          className="text-xl md:text-2xl font-bold text-white hover:text-red-500 transition-colors tracking-wider"
+          className="text-2xl md:text-3xl font-extrabold text-white hover:text-red-500 transition-colors tracking-widest"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          style={{ fontFamily: "Doto, sans-serif", letterSpacing: "2px" }}
+          style={{ fontFamily: "Doto, sans-serif", letterSpacing: "3px" }}
         >
           Glitch
         </motion.button>
@@ -169,15 +170,15 @@ const Navbar = () => {
             <motion.button
               key={item.path}
               onClick={() => scrollToSection(item.id, item.path)}
-              className={`text-white hover:text-red-500 transition-colors tracking-wide ${
-                location.pathname === item.path ? "text-red-500" : ""
+              className={`text-white font-semibold hover:font-bold hover:text-red-500 transition-colors tracking-wider ${
+                location.pathname === item.path ? "text-red-500 font-bold" : ""
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               style={{
                 fontFamily: "Doto, sans-serif",
-                letterSpacing: "1px",
-                fontSize: "1.05rem",
+                letterSpacing: "1.5px",
+                fontSize: "1.15rem",
               }}
             >
               {item.name}
@@ -199,13 +200,15 @@ const Navbar = () => {
                 <motion.button
                   key={item.path}
                   onClick={() => scrollToSection(item.id, item.path)}
-                  className={`text-white hover:text-red-500 transition-colors tracking-wide text-left ${
-                    location.pathname === item.path ? "text-red-500" : ""
+                  className={`text-white font-semibold hover:font-bold hover:text-red-500 transition-colors tracking-wider text-left ${
+                    location.pathname === item.path
+                      ? "text-red-500 font-bold"
+                      : ""
                   }`}
                   whileTap={{ scale: 0.95 }}
                   style={{
                     fontFamily: "Doto, sans-serif",
-                    letterSpacing: "1px",
+                    letterSpacing: "1.5px",
                   }}
                 >
                   {item.name}
@@ -277,9 +280,9 @@ const MainContent = () => {
         <SponsorsGrid />
       </section>
 
-      <section id="counter" className="min-h-screen snap-start pt-16 md:pt-24">
-        <Counter />
-      </section>
+      {/* <section id="counter" className="min-h-screen snap-start pt-16 md:pt-24"> */}
+      {/*   <Counter /> */}
+      {/* </section> */}
 
       <section id="footer" className="min-h-screen snap-start pt-16 md:pt-24">
         <Footer />
@@ -308,4 +311,3 @@ const Layout = () => {
 };
 
 export default Layout;
-
