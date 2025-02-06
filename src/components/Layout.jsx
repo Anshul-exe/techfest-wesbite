@@ -21,6 +21,7 @@ import TVABackground from "./TvaBg";
 import EyeOfAgamotto from "./EyeOfAgamotto";
 import SponsorsGrid from "./Sponsers";
 import Footer from "./Footer";
+import FAQ from "./Faq";
 import Counter from "./NumberDaudao";
 // Progress Indicator SVG
 const ProgressIndicator = ({ progress }) => (
@@ -279,9 +280,12 @@ const MainContent = () => {
 
       <section id="sponsor" className="min-h-screen snap-start pt-16 md:pt-24">
         <SponsorsGrid />
+        <hr />
       </section>
-
       <section id="footer" className="min-h-screen snap-start pt-16 md:pt-24">
+        <hr />
+      <FAQ />
+      <hr />
         <Footer />
       </section>
     </div>
