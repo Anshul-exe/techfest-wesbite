@@ -258,7 +258,6 @@ const MainContent = () => {
       <section id="home" className="min-h-screen snap-start pt-16 md:pt-24">
         <GlitchHomepage />
       </section>
-
       <section
         id="about"
         className="min-h-screen snap-start pt-16 md:pt-24 flex items-center justify-center px-4 md:px-8"
@@ -279,17 +278,15 @@ const MainContent = () => {
 
       <section id="sponsor" className="min-h-screen snap-start pt-16 md:pt-24">
         <SponsorsGrid />
-
       </section>
 
-      {/* <section id="counter" className="min-h-screen snap-start pt-16 md:pt-24"> */}
-      {/*   <Counter /> */}
-      {/* </section> */}
       <hr />
-      <section id="footer" className="min-h-screen snap-start pt-16 md:pt-24">
-    
-      <FAQ />
+      <section id="FAQ" className="snap-start pt-16 md:pt-24">
+        <FAQ />
+      </section>
       <hr />
+
+      <section id="footer" className="snap-start pt-16 md:pt-24">
         <Footer />
       </section>
     </div>

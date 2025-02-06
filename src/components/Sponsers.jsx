@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Users, Footprints, Building2, Globe, MapPin } from "lucide-react";
 import Counter from "../components/NumberDaudao";
 
 // Import images
@@ -57,7 +58,7 @@ const SponsorsGrid = () => {
   return (
     <motion.div
       ref={ref}
-      className="min-h-screen p-12 relative overflow-hidden"
+      className="min-h-screen p-12 relative overflow-hidden flex flex-col items-center justify-center"
       style={{
         background: "linear-gradient(-45deg, #000000, #1a1a1a, #000000)",
         backgroundSize: "400% 400%",
@@ -80,7 +81,7 @@ const SponsorsGrid = () => {
         OUR SPONSORS
       </motion.h1>
 
-      {/* Sponsors Grid */}
+      {/* Sponsor Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-16 gap-y-20 max-w-7xl mx-auto">
         {sponsors.slice(0, 4).map((sponsor, index) => (
           <SponsorCard
@@ -91,7 +92,7 @@ const SponsorsGrid = () => {
           />
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-20 max-w-6xl mx-auto mt-20 p-[50px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-20 max-w-6xl mx-auto mt-20">
         {sponsors.slice(4).map((sponsor, index) => (
           <SponsorCard
             key={sponsor.name}
@@ -102,17 +103,44 @@ const SponsorsGrid = () => {
         ))}
       </div>
 
-<hr />
-      {/* Counter Component */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-24 flex justify-center items-center m-auto"
-      >
-
-        <Counter />
-      </motion.div>
+      {/* Counter Section */}
+      <hr />
+      <div className="mt-12 flex flex-row items-center justify-between px-12 gap-16">
+        <Counter
+          targetNumber={5000}
+          duration={2000}
+          label="Registrations"
+          Icon={Users}
+          showPlus={true}
+        />
+        <Counter
+          targetNumber={8000}
+          duration={2000}
+          label="Footfall"
+          Icon={Footprints}
+          showPlus={true}
+        />
+        <Counter
+          targetNumber={25}
+          duration={1000}
+          label="Colleges"
+          Icon={Building2}
+          showPlus={true}
+        />
+        <Counter
+          targetNumber={4000}
+          duration={2000}
+          label="Reach"
+          Icon={Globe}
+          showPlus={true}
+        />
+        <Counter
+          targetNumber="GBU"
+          duration={500}
+          label="Delhi-NCR Location"
+          Icon={MapPin}
+        />
+      </div>
     </motion.div>
   );
 };
