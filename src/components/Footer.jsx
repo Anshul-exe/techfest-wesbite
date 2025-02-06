@@ -40,19 +40,20 @@ const Footer = () => {
   };
 
   return (
-    <div className="relative bg-[#160C0C] min-h-[300px] overflow-hidden">
+    <div className="relative bg-[#160C0C] overflow-hidden py-8">
+      {" "}
+      {/* Reduced padding to py-8 */}
       {/* Background Logo */}
       <motion.img
         src={glitchLogo}
         alt=""
-        className="absolute left-0 top-1/2 -translate-y-1/2 h-[400px] opacity-10"
+        className="absolute left-0 top-1/2 -translate-y-1/2 h-[300px] opacity-10"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 0.1, x: 0 }}
         transition={{ duration: 1 }}
       />
-
       <motion.footer
-        className="relative text-gray-300 py-16"
+        className="relative text-gray-300"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -62,12 +63,12 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Logo and Description Section */}
             <motion.div
-              className="md:col-span-6 space-y-8"
+              className="md:col-span-6 space-y-6"
               variants={itemVariants}
             >
               <div className="flex flex-col gap-4">
                 <motion.h2
-                  className="text-5xl font-bold tracking-wider bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
+                  className="text-4xl font-bold tracking-wider bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
                   variants={glitchAnimation}
                   whileHover={{
                     textShadow: [
@@ -170,7 +171,7 @@ const Footer = () => {
 
           {/* Copyright Section */}
           <motion.div
-            className="mt-16 pt-8 border-t border-gray-800 text-center"
+            className="mt-8 pt-6 border-t border-gray-800 text-center"
             variants={itemVariants}
           >
             <p className="text-gray-500">
