@@ -107,10 +107,15 @@ const BranchingTreeTimeline = ({
     <div className="w-full p-8 rounded-lg overflow-x-auto" ref={timelineRef}>
       <div
         className="relative"
-        style={{ width: totalWidth, height: totalHeight }}
+        style={{
+          width: "100%",
+          maxWidth: totalWidth,
+          height: totalHeight,
+          minHeight: "400px", // Adjust for smaller screens
+        }}
       >
         <svg
-          width={totalWidth}
+          width="100%"
           height={totalHeight}
           className="absolute inset-0"
         >
@@ -165,7 +170,10 @@ const BranchingTreeTimeline = ({
               <motion.div
                 key={event.id}
                 className="absolute"
-                style={{ left: `${endpoint.x}px`, top: `${endpoint.y}px` }}
+                style={{
+                  left: `${endpoint.x}px`,
+                  top: `${endpoint.y}px`,
+                }}
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
                 variants={nodeVariants(index)}
@@ -195,4 +203,3 @@ const BranchingTreeTimeline = ({
 };
 
 export default BranchingTreeTimeline;
-

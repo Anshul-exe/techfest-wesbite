@@ -46,7 +46,7 @@ const GlitchHomepage = () => {
       </motion.div>
       <div className="relative min-h-screen flex items-center justify-center">
         <motion.div
-          className="absolute left-[1200px] top-0 w-max h-full overflow-hidden"
+          className="absolute left-[1200px] top-0 w-max h-full overflow-hidden hidden md:block"
           initial={{ x: "-100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -56,7 +56,7 @@ const GlitchHomepage = () => {
           </div>
         </motion.div>
         <motion.div
-          className="absolute right-[1250px] top-[100px] w-max h-full overflow-hidden"
+          className="absolute right-[1250px] top-[100px] w-max h-full overflow-hidden hidden md:block"
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -65,9 +65,9 @@ const GlitchHomepage = () => {
             <img src={SpiderWeb} className="w-full h-full" alt="Spider Web" />
           </div>
         </motion.div>
-        <div className="relative z-10 flex flex-col items-center">
+        <div className="relative z-10 flex flex-col items-center text-center">
           <motion.h1
-            className="text-[300px] font-bold leading-none mb-4"
+            className="text-[100px] font-bold leading-none mb-4 text-6xl md:text-[200px] sm:text-[150px] xs:text-[100px]"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", duration: 1, bounce: 0.5 }}
@@ -77,7 +77,7 @@ const GlitchHomepage = () => {
             ))}
           </motion.h1>
           <motion.h2
-            className="text-[40px] font-['doto'] tracking-[0.5em] mb-24"
+            className="text-[40px] font-['doto'] tracking-[0.5em] mb-24 text-2xl md:text-[40px] sm:text-[24px] xs:text-[18px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -94,7 +94,7 @@ const GlitchHomepage = () => {
               transition={{ delay: 0.4 }}
             >
               <p className="text-sm font-['Doto'] leading-relaxed">
-              Glitch Tech Fest 2024 stands as an unparalleled opportunity for students to flaunt their technical acumen amid a dynamic milieu of peers and industry luminaries.
+                Glitch Tech Fest 2024 stands as an unparalleled opportunity for students to flaunt their technical acumen amid a dynamic milieu of peers and industry luminaries.
               </p>
             </motion.div>
             <motion.button

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -21,15 +21,15 @@ import TVABackground from "./TvaBg";
 import EyeOfAgamotto from "./EyeOfAgamotto";
 import SponsorsGrid from "./Sponsers";
 import Footer from "./Footer";
-
+import Counter from "./NumberDaudao";
 // Progress Indicator SVG
 const ProgressIndicator = ({ progress }) => (
   <svg
-    width="24"
-    height="24"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="none"
-    className="absolute top-1/2 -translate-y-1/2"
+    className="absolute top-1/2 -translate-y-1/2 md:w-24 md:h-24"
     style={{ left: `${progress * 100}%`, transform: `translate(-50%, -50%)` }}
   >
     <motion.circle
@@ -55,7 +55,6 @@ const ProgressIndicator = ({ progress }) => (
   </svg>
 );
 
-// Enhanced Progress Bar Component
 const ProgressBar = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -65,7 +64,7 @@ const ProgressBar = () => {
   });
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-1 bg-gray-800 z-50">
+    <div className="fixed top-0 left-0 right-0 h-0.5 md:h-1 bg-gray-800 z-50">
       <motion.div
         className="absolute top-0 left-0 right-0 h-full bg-red-500 origin-left"
         style={{ scaleX }}
@@ -79,7 +78,6 @@ const ProgressBar = () => {
   );
 };
 
-// Scroll Lock Component
 const ScrollLock = ({ children }) => {
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -94,9 +92,11 @@ const ScrollLock = ({ children }) => {
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (id, path) => {
     navigate(path);
+    setIsMenuOpen(false);
     setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
@@ -108,9 +108,16 @@ const Navbar = () => {
     }, 100);
   };
 
+  const navItems = [
+    { name: "Home", path: "/", id: "home" },
+    { name: "About us", path: "/about", id: "about" },
+    { name: "Sacred TimeLine", path: "/timeline", id: "timeline" },
+    { name: "Our events", path: "/sponsors", id: "sponsors" },
+  ];
+
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-40 px-8 py-6 bg-black/50 backdrop-blur-sm mt-1"
+      className="fixed top-0 left-0 right-0 z-40 px-4 md:px-8 py-4 md:py-6 bg-black/50 backdrop-blur-sm mt-1"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -119,20 +126,46 @@ const Navbar = () => {
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <motion.button
           onClick={() => scrollToSection("home", "/")}
-          className="text-2xl font-bold text-white hover:text-red-500 transition-colors tracking-wider"
+          className="text-xl md:text-2xl font-bold text-white hover:text-red-500 transition-colors tracking-wider"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           style={{ fontFamily: "Doto, sans-serif", letterSpacing: "2px" }}
         >
           Glitch
         </motion.button>
-        <div className="flex items-center space-x-8">
-          {[
-            { name: "Home", path: "/", id: "home" },
-            { name: "About us", path: "/about", id: "about" },
-            { name: "Sacred TimeLine", path: "/timeline", id: "timeline" },
-            { name: "Our events", path: "/sponsors", id: "sponsors" },
-          ].map((item) => (
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white p-2"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {isMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navItems.map((item) => (
             <motion.button
               key={item.path}
               onClick={() => scrollToSection(item.id, item.path)}
@@ -151,6 +184,36 @@ const Navbar = () => {
             </motion.button>
           ))}
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <motion.div
+            className="absolute top-full left-0 right-0 bg-black/90 backdrop-blur-sm md:hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="flex flex-col p-4 space-y-4">
+              {navItems.map((item) => (
+                <motion.button
+                  key={item.path}
+                  onClick={() => scrollToSection(item.id, item.path)}
+                  className={`text-white hover:text-red-500 transition-colors tracking-wide text-left ${
+                    location.pathname === item.path ? "text-red-500" : ""
+                  }`}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    fontFamily: "Doto, sans-serif",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  {item.name}
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </motion.nav>
   );
@@ -161,7 +224,6 @@ const MainContent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Ensure home page is visible first
     if (location.pathname === "/") {
       const element = document.getElementById("home");
       if (element) {
@@ -180,7 +242,6 @@ const MainContent = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            {/* Add your loading animation here */}
             <div className="text-red-500 text-2xl">Loading...</div>
           </motion.div>
         </div>
@@ -190,30 +251,37 @@ const MainContent = () => {
 
   return (
     <div className="min-h-screen bg-black snap-y snap-mandatory overflow-y-auto">
-      <section id="home" className="min-h-screen snap-start pt-24">
+      <section id="home" className="min-h-screen snap-start pt-16 md:pt-24">
         <GlitchHomepage />
       </section>
 
       <section
-  id="about"
-  className="min-h-screen snap-start pt-24 flex items-center justify-center"
->
-  <div className="flex flex-row items-center justify-between gap-8 w-full">
-    <AboutSection className="w-1/2" />
-    <EyeOfAgamotto className="w-1/2" />
-  </div>
-</section>
+        id="about"
+        className="min-h-screen snap-start pt-16 md:pt-24 flex items-center justify-center px-4 md:px-8"
+      >
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
+          <AboutSection className="w-full md:w-1/2" />
+          <EyeOfAgamotto className="w-full md:w-1/2 mt-8 md:mt-0" />
+        </div>
+      </section>
 
-
-      <section id="timeline" className="min-h-screen snap-start pt-24">
+      <section id="timeline" className="min-h-screen snap-start pt-16 md:pt-24">
         <TVABackground />
       </section>
 
-      <section id="sponsors" className="min-h-screen snap-start pt-24">
+      <section id="sponsors" className="min-h-screen snap-start pt-16 md:pt-24">
         <SponsorsGrid />
       </section>
 
-      <section id="footer" className="min-h-screen snap-start pt-24">
+      <section id="cards" className="min-h-screen snap-start pt-16 md:pt-24">
+        <HoverCards />
+      </section>
+
+      <section id="footer" className="min-h-screen snap-start pt-16 md:pt-24">
+        <Counter />
+      </section>
+
+      <section id="footer" className="min-h-screen snap-start pt-16 md:pt-24">
         <Footer />
       </section>
     </div>
