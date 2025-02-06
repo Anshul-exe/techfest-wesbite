@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import glitchLogo from "../assets/image.png";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,9 +41,21 @@ const Footer = () => {
     },
   };
 
+  const scrollToSection = (id) => {
+    navigate(`/${id}`);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
+  };
+
   return (
     <div className="relative bg-[#160C0C] overflow-hidden py-8">
-      {" "}
       {/* Reduced padding to py-8 */}
       {/* Background Logo */}
       <motion.img
@@ -113,23 +127,43 @@ const Footer = () => {
                   />
                 </h3>
                 <ul className="space-y-3">
-                  {["About Us", "Hackathon", "Events", "Contact"].map(
-                    (item) => (
-                      <motion.li
-                        key={item}
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
+                  {["About Us", "Hackathon", "Events"].map((item) => (
+                    <motion.li
+                      key={item}
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <button
+                        onClick={() =>
+                          item === "About Us"
+                            ? scrollToSection("about")
+                            : item === "Events"
+                              ? scrollToSection("events")
+                              : null
+                        }
+                        className="text-white hover:text-pink-500 transition-colors relative group"
                       >
-                        <Link
-                          to={`/${item.toLowerCase().replace(" ", "-")}`}
-                          className="hover:text-pink-500 transition-colors relative group"
-                        >
-                          <span className="relative z-10">{item}</span>
-                          <motion.span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300" />
-                        </Link>
-                      </motion.li>
-                    ),
-                  )}
+                        <span className="relative z-10">{item}</span>
+                        <motion.span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300" />
+                      </button>
+                    </motion.li>
+                  ))}
+                  {/* Contact link */}
+                  <motion.li
+                    key="Contact"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <a
+                      href="https://linktr.ee/Anurag_Rawal_04"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-pink-500 transition-colors relative group"
+                    >
+                      <span className="relative z-10">Contact</span>
+                      <motion.span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300" />
+                    </a>
+                  </motion.li>
                 </ul>
               </motion.div>
 
