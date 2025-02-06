@@ -35,7 +35,7 @@ const GlitchHomepage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden pt-20">
+    <div className="relative min-h-screen bg-black text-white overflow-hidden">
       <motion.div
         className="absolute inset-0 flex items-center justify-center"
         initial={{ scale: 0 }}
@@ -52,7 +52,11 @@ const GlitchHomepage = () => {
           transition={{ duration: 1 }}
         >
           <div className="w-full h-full">
-            <img src={SpiderWeb} className="w-full h-full right-100" alt="Spider Web" />
+            <img
+              src={SpiderWeb}
+              className="w-full h-full right-100"
+              alt="Spider Web"
+            />
           </div>
         </motion.div>
         <motion.div
@@ -65,7 +69,7 @@ const GlitchHomepage = () => {
             <img src={SpiderWeb} className="w-full h-full" alt="Spider Web" />
           </div>
         </motion.div>
-        <div className="relative z-10 flex flex-col items-center text-center">
+        <div className="relative z-10 flex flex-col items-center text-center -mt-32">
           <motion.h1
             className="text-[100px] font-bold leading-none mb-4 text-6xl md:text-[200px] sm:text-[150px] xs:text-[100px]"
             initial={{ scale: 0 }}
@@ -77,7 +81,7 @@ const GlitchHomepage = () => {
             ))}
           </motion.h1>
           <motion.h2
-            className="text-[40px] font-['doto'] tracking-[0.5em] mb-24 text-2xl md:text-[40px] sm:text-[24px] xs:text-[18px]"
+            className="text-[40px] font-['doto'] tracking-[0.5em] mb-12 text-2xl md:text-[40px] sm:text-[24px] xs:text-[18px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -94,7 +98,9 @@ const GlitchHomepage = () => {
               transition={{ delay: 0.4 }}
             >
               <p className="text-sm font-['Doto'] leading-relaxed">
-                Glitch Tech Fest 2024 stands as an unparalleled opportunity for students to flaunt their technical acumen amid a dynamic milieu of peers and industry luminaries.
+                Glitch Tech Fest 2024 stands as an unparalleled opportunity for
+                students to flaunt their technical acumen amid a dynamic milieu
+                of peers and industry luminaries.
               </p>
             </motion.div>
             <motion.button
