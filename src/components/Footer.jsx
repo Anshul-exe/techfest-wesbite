@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import glitchLogo from "../assets/image.png";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,20 +41,33 @@ const Footer = () => {
     },
   };
 
+  const scrollToSection = (id) => {
+    navigate(`/${id}`);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
+  };
+
   return (
-    <div className="relative bg-[#160C0C] min-h-[300px] overflow-hidden">
+    <div className="relative bg-[#160C0C] overflow-hidden py-8">
+      {/* Reduced padding to py-8 */}
       {/* Background Logo */}
       <motion.img
         src={glitchLogo}
         alt=""
-        className="absolute left-0 top-1/2 -translate-y-1/2 h-[400px] opacity-10"
+        className="absolute left-0 top-1/2 -translate-y-1/2 h-[300px] opacity-10"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 0.1, x: 0 }}
         transition={{ duration: 1 }}
       />
-
       <motion.footer
-        className="relative text-gray-300 py-16"
+        className="relative text-gray-300"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -62,12 +77,12 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Logo and Description Section */}
             <motion.div
-              className="md:col-span-6 space-y-8"
+              className="md:col-span-6 space-y-6"
               variants={itemVariants}
             >
               <div className="flex flex-col gap-4">
                 <motion.h2
-                  className="text-5xl font-bold tracking-wider bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
+                  className="text-4xl font-bold tracking-wider bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
                   variants={glitchAnimation}
                   whileHover={{
                     textShadow: [
@@ -112,23 +127,43 @@ const Footer = () => {
                   />
                 </h3>
                 <ul className="space-y-3">
-                  {["About Us", "Hackathon", "Events", "Contact"].map(
-                    (item) => (
-                      <motion.li
-                        key={item}
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
+                  {["About Us", "Hackathon", "Events"].map((item) => (
+                    <motion.li
+                      key={item}
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <button
+                        onClick={() =>
+                          item === "About Us"
+                            ? scrollToSection("about")
+                            : item === "Events"
+                              ? scrollToSection("events")
+                              : null
+                        }
+                        className="text-white hover:text-pink-500 transition-colors relative group"
                       >
-                        <Link
-                          to={`/${item.toLowerCase().replace(" ", "-")}`}
-                          className="hover:text-pink-500 transition-colors relative group"
-                        >
-                          <span className="relative z-10">{item}</span>
-                          <motion.span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300" />
-                        </Link>
-                      </motion.li>
-                    ),
-                  )}
+                        <span className="relative z-10">{item}</span>
+                        <motion.span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300" />
+                      </button>
+                    </motion.li>
+                  ))}
+                  {/* Contact link */}
+                  <motion.li
+                    key="Contact"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <a
+                      href="https://linktr.ee/Anurag_Rawal_04"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-pink-500 transition-colors relative group"
+                    >
+                      <span className="relative z-10">Contact</span>
+                      <motion.span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300" />
+                    </a>
+                  </motion.li>
                 </ul>
               </motion.div>
 
@@ -170,7 +205,7 @@ const Footer = () => {
 
           {/* Copyright Section */}
           <motion.div
-            className="mt-16 pt-8 border-t border-gray-800 text-center"
+            className="mt-8 pt-6 border-t border-gray-800 text-center"
             variants={itemVariants}
           >
             <p className="text-gray-500">
