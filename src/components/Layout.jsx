@@ -285,9 +285,10 @@ const MainContent = () => {
       <section id="FAQ" className="snap-start pt-16 md:pt-24">
         <FAQ />
       </section>
-      <hr />
+     
 
       <section id="footer" className="snap-start pt-16 md:pt-24">
+      <hr />
         <Footer />
       </section>
     </div>

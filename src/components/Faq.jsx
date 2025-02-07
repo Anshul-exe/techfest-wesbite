@@ -12,7 +12,7 @@ const FAQ = () => {
 
   return (
     <div className="max-w-md mx-auto py-10 px-4 sm:px-6 text-[#ef1897]">
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6">FAQs</h2>
+      <h2 className="text-6xl sm:text-6xl font-bold text-center mb-6">FAQs</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <div key={index} className="border-b border-[#ef1897] pb-2">
