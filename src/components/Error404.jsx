@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/Glitch-logo.png";
+import logo from "../assets/mascot.png";
 
 const Space404 = () => {
   const containerVariants = {
@@ -96,7 +96,7 @@ const Space404 = () => {
         </motion.span>
 
         <motion.div
-          className="w-[250px] h-[250px] z-10"
+          className="w-[250px] h-[250px] rounded-full border-8 border-purple-500 flex items-center justify-center bg-[#1a1b2e] shadow-[0_0_25px_rgba(139,92,246,0.5)] z-10"
           animate={{
             rotate: 360,
             y: [0, -20, 0],
@@ -109,7 +109,7 @@ const Space404 = () => {
           <img
             src={logo}
             alt="Glitch Logo"
-            className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]"
+            className="w-[70%] h-[70%] object-contain"
           />
         </motion.div>
 
