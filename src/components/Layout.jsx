@@ -289,10 +289,6 @@ const MainContent = () => {
       <section id="footer" className="snap-start pt-16 md:pt-24">
         <Footer />
       </section>
-
-      <section id="shiiiiii" className="snap-start pt-16 md:pt-24">
-        <Space404 />
-      </section>
     </div>
   );
 };
@@ -308,7 +304,6 @@ const Layout = () => {
             <>
               <Navbar />
               <MainContent />
-              {/* <Space404 /> */}
             </>
           }
         />

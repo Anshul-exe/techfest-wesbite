@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/mascot.png";
+import logo from "../assets/logo.png";
 
 const Space404 = () => {
   const containerVariants = {
@@ -109,7 +109,7 @@ const Space404 = () => {
           <img
             src={logo}
             alt="Glitch Logo"
-            className="w-[70%] h-[70%] object-contain"
+            className="w-full h-full object-cover"
           />
         </motion.div>
 
