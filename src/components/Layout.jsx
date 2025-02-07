@@ -297,7 +297,7 @@ const MainContent = () => {
 const Layout = () => {
   return (
     <BrowserRouter>
-      <ProgressBar />
+     
       <Routes>
         <Route
           path="*"
@@ -312,6 +312,7 @@ const Layout = () => {
           path=""
           element={
             <>
+            <ProgressBar />
             <MainContent/>
             </>
           }
