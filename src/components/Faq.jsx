@@ -26,7 +26,7 @@ const FAQ = () => {
             <div 
               className={`transition-all duration-300 overflow-hidden ${activeIndex === index ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
             >
-              <p className="mt-2 text-[#ef1897] text-sm sm:text-base">{faq.answer}</p>
+              <p className="mt-2 text-white text-sm sm:text-base">{faq.answer}</p>
             </div>
           </div>
         ))}
