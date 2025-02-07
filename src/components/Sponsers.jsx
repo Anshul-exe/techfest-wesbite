@@ -105,42 +105,43 @@ const SponsorsGrid = () => {
 
       {/* Counter Section */}
       <hr />
-      <div className="mt-12 flex flex-row items-center justify-between px-12 gap-16">
-        <Counter
-          targetNumber={5000}
-          duration={2000}
-          label="Registrations"
-          Icon={Users}
-          showPlus={true}
-        />
-        <Counter
-          targetNumber={8000}
-          duration={2000}
-          label="Footfall"
-          Icon={Footprints}
-          showPlus={true}
-        />
-        <Counter
-          targetNumber={25}
-          duration={1000}
-          label="Colleges"
-          Icon={Building2}
-          showPlus={true}
-        />
-        <Counter
-          targetNumber={4000}
-          duration={2000}
-          label="Reach"
-          Icon={Globe}
-          showPlus={true}
-        />
-        <Counter
-          targetNumber="GBU"
-          duration={500}
-          label="Delhi-NCR Location"
-          Icon={MapPin}
-        />
-      </div>
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap items-center justify-center gap-6 sm:gap-8 px-6 md:px-12">
+  <Counter
+    targetNumber={5000}
+    duration={2000}
+    label="Registrations"
+    Icon={Users}
+    showPlus={true}
+  />
+  <Counter
+    targetNumber={8000}
+    duration={2000}
+    label="Footfall"
+    Icon={Footprints}
+    showPlus={true}
+  />
+  <Counter
+    targetNumber={25}
+    duration={1000}
+    label="Colleges"
+    Icon={Building2}
+    showPlus={true}
+  />
+  <Counter
+    targetNumber={4000}
+    duration={2000}
+    label="Reach"
+    Icon={Globe}
+    showPlus={true}
+  />
+  <Counter
+    targetNumber="GBU"
+    duration={500}
+    label="Delhi-NCR Location"
+    Icon={MapPin}
+  />
+</div>
+
     </motion.div>
   );
 };

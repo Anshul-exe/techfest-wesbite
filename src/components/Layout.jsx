@@ -255,6 +255,7 @@ const MainContent = () => {
 
   return (
     <div className="min-h-screen bg-black snap-y snap-mandatory overflow-y-auto">
+      <Navbar/>
       <section id="home" className="min-h-screen snap-start pt-16 md:pt-24">
         <GlitchHomepage />
       </section>
@@ -284,9 +285,10 @@ const MainContent = () => {
       <section id="FAQ" className="snap-start pt-16 md:pt-24">
         <FAQ />
       </section>
-      <hr />
+     
 
       <section id="footer" className="snap-start pt-16 md:pt-24">
+      <hr />
         <Footer />
       </section>
     </div>
@@ -296,14 +298,23 @@ const MainContent = () => {
 const Layout = () => {
   return (
     <BrowserRouter>
-      <ProgressBar />
+     
       <Routes>
         <Route
           path="*"
           element={
             <>
-              <Navbar />
-              <MainContent />
+
+              <Space404/>
+            </>
+          }
+        />
+        <Route
+          path=""
+          element={
+            <>
+            <ProgressBar />
+            <MainContent/>
             </>
           }
         />

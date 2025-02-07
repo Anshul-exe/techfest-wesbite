@@ -55,7 +55,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="relative bg-[#160C0C] overflow-hidden py-8">
+    <div className="relative bg-black overflow-hidden py-8">
       {/* Reduced padding to py-8 */}
       {/* Background Logo */}
       <motion.img
